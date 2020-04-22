@@ -5,7 +5,7 @@ const { user } = require('../controllers')
 
 module.exports = router
 
-router.post('/register', [
+router.post('/', [
   check('username')
     .notEmpty().withMessage('Username should not be empty')
     .isLength({ min: 2 }).withMessage('Must be at least 2 characters long'),

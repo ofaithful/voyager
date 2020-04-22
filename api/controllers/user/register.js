@@ -1,6 +1,7 @@
 const User = require('../../../models/user')
 const { validationResult } = require('express-validator')
-const { checkUser, hashPassword } = require('../../../utils/user')
+const checkUser = require('../../../utils/checkUser')
+const { hash } = require('../../../utils/hash')
 
 module.exports = async function(req, res) {
   // input data validation
@@ -17,7 +18,7 @@ module.exports = async function(req, res) {
   }
 
   const newUser = new User({ username, password })
-  newUser.password = await hashPassword(password)
+  newUser.password = await hash(password)
 
   try {
     newUser.save()
