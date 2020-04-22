@@ -1,7 +1,9 @@
-const express = require('express')
-const router = express.Router()
+const Router = require('express-promise-router')
 const { check } = require('express-validator')
-const registerUser = require('../controllers/user/register')
+const router = new Router()
+const { user } = require('../controllers')
+
+module.exports = router
 
 router.post('/register', [
   check('username')
@@ -17,7 +19,6 @@ router.post('/register', [
       return true
     })
 ], async function(req, res) {
-  registerUser(req, res)
+  user.register(req, res)
 })
 
-module.exports = router

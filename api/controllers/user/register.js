@@ -1,6 +1,6 @@
-const User = require('../../models/user')
+const User = require('../../../models/user')
 const { validationResult } = require('express-validator')
-const { checkUser, hashPassword } = require('../../utils/user')
+const { checkUser, hashPassword } = require('../../../utils/user')
 
 module.exports = async function(req, res) {
   // input data validation
