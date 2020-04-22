@@ -1,7 +1,7 @@
-const hashPassword = require('./hashPassword');
-const checkUser = require('./checkUser');
+const hashPassword = require('./hashPassword')
+const checkUser = require('./checkUser')
 
 module.exports = {
-    hashPassword,
-    checkUser
+  hashPassword,
+  checkUser
 }
